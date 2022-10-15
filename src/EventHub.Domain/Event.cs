@@ -12,5 +12,7 @@ namespace EventHub.Domain
 
         public Guid EventTypeId { get; set; }
         public EventType EventType { get; set; }
+
+        public ICollection<EventTagEvent> EventTagEvents { get; set; }
     }
 }
