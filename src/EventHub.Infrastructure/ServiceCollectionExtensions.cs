@@ -1,3 +1,5 @@
+using EventHub.Application.Common.Interfaces;
+using EventHub.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +14,8 @@ namespace EventHub.Infrastructure
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IRepository, GenericRepository>();
 
             return services;
         }
