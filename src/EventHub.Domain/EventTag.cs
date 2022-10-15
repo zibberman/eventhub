@@ -1,6 +1,6 @@
 namespace EventHub.Domain
 {
-    public class EventTag
+    public class EventTag : Entity
     {
         public string TagName { get; set; } = String.Empty;
 
